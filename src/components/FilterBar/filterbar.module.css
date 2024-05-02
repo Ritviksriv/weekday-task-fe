@@ -2,7 +2,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1px;
-    position: fixed;
+
+    align-items: center;
+    height: 80px;
 }

@@ -5,7 +5,7 @@ import styles from './list-body.module.css'
 const ListBody = () => {
     return (
         <Box className={styles['list-body-container']}>
-            dwad
+        dwas
         </Box>
     )   
 }

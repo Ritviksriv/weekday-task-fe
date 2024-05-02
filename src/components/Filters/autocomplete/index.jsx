@@ -2,8 +2,10 @@ import React from "react";
 import { Box } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import { TextField } from "@mui/material";
+import styles from './autocomplete.module.css';
 
 const GenericAutocomplete = (props) => {
+    const { multiple } = props
     const top100Films = [
         { title: 'The Shawshank Redemption', year: 1994 },
         { title: 'The Godfather', year: 1972 },
@@ -133,17 +135,15 @@ const GenericAutocomplete = (props) => {
   return (
     <Box>
       <Autocomplete
-        multiple
-        limitTags={2}
+        multiple={multiple}
         id="multiple-limit-tags"
         size="small"
         options={top100Films}
         getOptionLabel={(option) => option.title}
-        defaultValue={[top100Films[13], top100Films[12], top100Films[11]]}
         renderInput={(params) => (
           <TextField {...params} label="limitTags" placeholder="Favorites" />
         )}
-        sx={{ width: "500px" }}
+        className={styles["autocomplete-style"]}
       />
     </Box>
   );
