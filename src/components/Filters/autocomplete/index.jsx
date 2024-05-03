@@ -12,8 +12,7 @@ const GenericAutocomplete = (props) => {
         <Autocomplete
             multiple={multiple}
             options={options}
-            value={selectedOptions}
-            onChange={handleChange}
+            value={[]}
             disableCloseOnSelect
             getOptionLabel={(option) => option.label}
             className={styles['autocomplete-style']}

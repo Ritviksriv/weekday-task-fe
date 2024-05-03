@@ -1,4 +1,4 @@
 .list-body-container{
-    background-color: red;
-    margin-top: 100px
+    display: flex;
+    justify-content: center;
 }
