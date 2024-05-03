@@ -21,14 +21,10 @@ function jobFilter(jobs, filters) {
           (role) => role.toLowerCase() === job.jobRole.toLowerCase()
         );
 
-      const isExperienceMatch =
+        const isExperienceMatch =
         filters.experience.length === 0 ||
-        filters.experience.some((exp) => {
-          const jobMinExp = Number(job.minExp);
-          const jobMaxExp = Number(job.maxExp);
-          return exp >= jobMinExp && exp <= jobMaxExp;
-        });
-
+        filters.experience === '' || // Check if it's an empty string
+        Number(filters.experience) >= Number(job.minExp) && Number(filters.experience) <= Number(job.maxExp);
       const isSalaryMatch =
         filters.minimumSalary.length === 0 ||
         filters.minimumSalary.some((salaryRange) => {
