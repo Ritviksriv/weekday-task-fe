@@ -23,7 +23,7 @@ function jobFilter(jobs, filters) {
 
         const isExperienceMatch =
         filters.experience.length === 0 ||
-        filters.experience === '' || // Check if it's an empty string
+        filters.experience === '' ||
         Number(filters.experience) >= Number(job.minExp) && Number(filters.experience) <= Number(job.maxExp);
       const isSalaryMatch =
         filters.minimumSalary.length === 0 ||
@@ -101,9 +101,10 @@ const ListBody = () => {
         <Grid
           container
           sx={{ padding: 2 }}
+          spacing={2}
         >
           {jobs.map((job, index) => (
-            <Grid item key={index} sm={6} md={4} lg={4}>
+            <Grid item key={index} sm={6} md={4} lg={4} sx={{display:'flex', justifyContent:'center'}}>
               <JobCard jobData={job} />
             </Grid>
           ))}
